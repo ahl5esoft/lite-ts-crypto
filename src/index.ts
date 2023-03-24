@@ -1,2 +1,5 @@
-export * from './bcryptjs-crypto';
-export * from './crypto-base';
+import { AesCrypto } from './aes-crypto';
+import { CryptoBase } from './crypto-base';
+
+export { AesCrypto, CryptoBase };
+globalThis['lite-ts-crypto'] = { AesCrypto, CryptoBase };
