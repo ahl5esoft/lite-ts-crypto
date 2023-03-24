@@ -4,18 +4,20 @@
     "url": "https://github.com/ahl5esoft/lite-ts-crypto/issues"
   },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
     "crypto-js": "^4.1.1"
   },
   "description": "加解密算法",
   "devDependencies": {
-    "@types/bcryptjs": "^2.4.2",
     "@types/crypto-js": "^4.1.1",
     "@types/mocha": "^10.0.1",
     "@types/node": "^18.11.18",
+    "lite-ts-fs": "^1.9.2",
     "lite-ts-mock": "^1.1.0",
+    "terser-webpack-plugin": "^5.3.7",
+    "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "webpack-cli": "^5.0.1"
   },
   "homepage": "https://github.com/ahl5esoft/lite-ts-crypto#readme",
   "keywords": [
@@ -32,6 +34,7 @@
   "scripts": {
     "build": "tsc -p build.tsconfig.json",
     "doc": "typedoc src/index.ts",
+    "jspack": "webpack build && ts-node sh/jspack",
     "login": "npm config delete registry && npm config set https-proxy http://127.0.0.1:4780 && npm login",
     "release": "npm run build && npm publish && npm config delete https-proxy && npm config set registry=https://registry.npm.taobao.org",
     "test": "mocha -t 30s -r ./node_modules/ts-node/register/index.js --exit"
