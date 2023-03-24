@@ -3,6 +3,9 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: ["./src/index.ts"],
+  externals: {
+    'crypto-js': 'crypto-js'
+  },
   mode: "none",
   module: {
     rules: [
